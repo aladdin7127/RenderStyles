@@ -1,3 +1,7 @@
+local function ImVec4(r,g,b,a)
+    return {Color = Color3.new(r,g,b), Alpha = a}
+end
+
 local function StyleColors()
     local colors = {}
 
@@ -84,7 +88,7 @@ local function Style()
     return style
 end
 
-function SetStyle(Window)
+local function SetStyle(Window)
     for i,v in StyleColors() do
         Window:SetColor(RenderColorOption[i], v.Color, v.Alpha)
     end
