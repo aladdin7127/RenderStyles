@@ -1,3 +1,8 @@
+local function ImVec4(r,g,b,a)
+    return {Color = Color3.new(r,g,b), Alpha = a}
+end
+
+
 local colors = {}
 
         colors["Text"] = ImVec4(1.00, 1.00, 1.00, 1.00);
