@@ -1,24 +1,21 @@
 local Manager = {}
-local Window = (...) or error("No window in start arguments")
-
 local ThemesRepo = "https://raw.githubusercontent.com/aladdin7127/RenderStyles/main/ThemeManager/Themes/%s.lua"
 local ThemeList = loadstring(syn.request({Method = "GET", Url = "https://raw.githubusercontent.com/aladdin7127/RenderStyles/main/ThemeManager/ThemeList.lua"}).Body)()
-
-if not typeof(Window) == "RenderWindow" then error("Start arguments must be a renderwindow") end
 
 local SetTheme = function(Name)
     local Colours, Style  = loadstring(syn.request({Method = "GET", Url = string.format(ThemesRepo, Name)}).Body)();Style = Style or {};
     for i,v in Colours do
-        Window:SetColor(RenderColorOption[i], v.Colour, v.Alpha)
+        Manager.Window:SetColor(RenderColorOption[i], v.Colour, v.Alpha)
     end
 
     for i,v in Style do
-        Window:SetStyle(RenderStyleOption[i], v)
+        Manager.Window:SetStyle(RenderStyleOption[i], v)
     end
 end
 
-Manager.Load = function(TabMenu: RenderTabMenu, Name)
-    Manager.Tab = TabMenu:Add(Name)
+Manager.Load = function(Window, Name)
+    Manager.Window = Window
+    Manager.Tab = Window:TabMenu():Add(Name)
 
     SetTheme("Default")
 
@@ -33,9 +30,7 @@ Manager.Load = function(TabMenu: RenderTabMenu, Name)
 end
 
 Manager.Unload = function()
-    Manager.Tab:Clear()
     Manager = nil
-    Window = nil
 end
 
 return Manager
