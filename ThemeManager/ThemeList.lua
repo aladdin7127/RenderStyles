@@ -1,1 +1,1 @@
-return {"Default", "Classic", "Dark", "Kyoto", "Aquamarine"}
+return {"Default", "Classic", "Dark", "Kyoto", "Blood"}
