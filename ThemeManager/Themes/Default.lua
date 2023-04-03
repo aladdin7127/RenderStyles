@@ -1,3 +1,7 @@
+function LerpColor3(c1, c2, t)
+    return {Color = c1.Color:Lerp(c2.Color, t), Alpha = c1.Alpha * (1 - t) + (c2.Alpha * t)}
+end
+
 local function ImVec4(r, g, b, a)
     return {Colour = Color3.new(r, g, b), Alpha = a or 1}
 end
@@ -38,11 +42,11 @@ Colours["SeparatorActive"] = ImVec4(0.10,0.40,0.75,1.00)
 Colours["ResizeGrip"] = ImVec4(0.26,0.59,0.98,0.20)
 Colours["ResizeGripHovered"] = ImVec4(0.26,0.59,0.98,0.67)
 Colours["ResizeGripActive"] = ImVec4(0.26,0.59,0.98,0.95)
-Colours["Tab"] = ImVec4(Colours["Header"],Colours["TitleBgActive"],0.80, 0.8)
+Colours["Tab"] = LerpColor3(Colours["Header"],Colours["TitleBgActive"],0.80)
 Colours["TabHovered"] =Colours["HeaderHovered"]
-Colours["TabActive"] = ImVec4(Colours["HeaderActive"],Colours["TitleBgActive"],0.60,0.6)
-Colours["TabUnfocused"] = ImVec4(Colours["Tab"],Colours["TitleBg"],0.80)
-Colours["TabUnfocusedActive"] = ImVec4(Colours["TabActive"],Colours["TitleBg"],0.40)
+Colours["TabActive"] = LerpColor3(Colours["HeaderActive"],Colours["TitleBgActive"],0.60)
+Colours["TabUnfocused"] = LerpColor3(Colours["Tab"],Colours["TitleBg"],0.80)
+Colours["TabUnfocusedActive"] = LerpColor3(Colours["TabActive"],Colours["TitleBg"],0.40)
 Colours["PlotLines"] = ImVec4(0.61,0.61,0.61,1.00)
 Colours["PlotLinesHovered"] = ImVec4(1.00,0.43,0.35,1.00)
 Colours["PlotHistogram"] = ImVec4(0.90,0.70,0.00,1.00)
