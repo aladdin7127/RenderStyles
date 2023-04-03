@@ -1,5 +1,5 @@
 function LerpColor3(c1, c2, t)
-    return {Color = c1.Color:Lerp(c2.Color, t), Alpha = c1.Alpha * (1 - t) + (c2.Alpha * t)}
+    return {Colour = c1.Color:Lerp(c2.Color, t), Alpha = c1.Alpha * (1 - t) + (c2.Alpha * t)}
 end
 
 local function ImVec4(r, g, b, a)
