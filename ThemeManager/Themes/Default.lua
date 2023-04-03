@@ -1,4 +1,3 @@
-
 local function ImVec4(r, g, b, a)
     return {Colour = Color3.new(r, g, b), Alpha = a}
 end
@@ -60,4 +59,6 @@ Colours["NavWindowingHighlight"] = ImVec4(1.00,1.00,1.00,0.70)
 Colours["NavWindowingDimBg"] = ImVec4(0.80,0.80,0.80,0.20)
 Colours["ModalWindowDimBg"] = ImVec4(0.80,0.80,0.80,0.35)
 
-return Colours
+Style = {}
+
+return Colours, Style
