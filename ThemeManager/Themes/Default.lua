@@ -65,4 +65,24 @@ Colours["ModalWindowDimBg"] = ImVec4(0.80,0.80,0.80,0.35)
 
 Style = {}
 
+Style.WindowPadding = Vector2.new(8, 8)
+Style.FramePadding = Vector2.new(4, 3)
+Style.CellPadding = Vector2.new(4, 2)
+Style.ItemSpacing = Vector2.new(8, 4)
+Style.ItemInnerSpacing = Vector2.new(4, 4)
+Style.IndentSpacing = 21
+Style.ScrollbarSize = 14
+Style.GrabMinSize = 10
+Style.WindowBorderSize = 1
+Style.ChildBorderSize = 1
+Style.PopupBorderSize = 1
+Style.FrameBorderSize = 0
+Style.WindowRounding = 0
+Style.ChildRounding = 0
+Style.FrameRounding = 0
+Style.PopupRounding = 0
+Style.ScrollbarRounding = 9
+Style.GrabRounding = 0
+Style.TabRounding = 4
+
 return Colours, Style
