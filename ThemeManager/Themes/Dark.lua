@@ -1,5 +1,5 @@
 local function ImVec4(r, g, b, a)
-    return {Color = Color3.new(r, g, b), Alpha = a}
+    return {Colour = Color3.new(r, g, b), Alpha = a}
 end
 
 local Colours = {}
