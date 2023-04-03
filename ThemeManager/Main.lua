@@ -18,11 +18,11 @@ local SetTheme = function(Name)
 end
 
 Manager.Load = function(TabMenu: RenderTabMenu, Name)
-    local Tab = TabMenu:Add(Name)
+    Manager.Tab = TabMenu:Add(Name)
 
     SetTheme("Default")
 
-    local ThemesList = Tab:Combo()
+    local ThemesList = Manager.Tab:Combo()
     ThemesList.Label = "Themes"
     ThemesList.Items = ThemeList
     ThemesList.OnUpdated:Connect(function(v)
@@ -30,6 +30,11 @@ Manager.Load = function(TabMenu: RenderTabMenu, Name)
     end)
 
     return Tab
+end
+
+Manager.Unload = function()
+    Manager.Tab:Clear()
+    Manager = nil
 end
 
 return Manager
