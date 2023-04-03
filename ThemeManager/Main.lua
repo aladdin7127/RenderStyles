@@ -35,6 +35,7 @@ end
 Manager.Unload = function()
     Manager.Tab:Clear()
     Manager = nil
+    Window = nil
 end
 
 return Manager
