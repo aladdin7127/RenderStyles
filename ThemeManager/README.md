@@ -9,6 +9,6 @@ for i,v in Colours do
 end
 
 for i,v in Style do
-    Window:SetColor(RenderStyleOption[i], va)
+    Window:SetColor(RenderStyleOption[i], v)
 end
 ```
