@@ -3,7 +3,7 @@ function LerpColor3(c1, c2, t)
 end
 
 local function ImVec4(r, g, b, a)
-    return {Colour = Color3.new(r, g, b), Alpha = a or 1}
+    return {Colour = Color3.new(r, g, b), Alpha = a or 1, Color = Color3.new(r, g, b)}
 end
 
 
