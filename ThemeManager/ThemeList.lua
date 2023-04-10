@@ -1,1 +1,1 @@
-return {"ImGuiDark", "ImGuiClassic", "Dark", "Kyoto"}
+return {"ImGuiDark", "ImGuiClassic", "Dark", "Kyoto", "Blood"}
