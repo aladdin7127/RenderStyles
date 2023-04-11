@@ -83,3 +83,5 @@ Style.PopupRounding = 3;
 Style.ScrollbarRounding = 1;
 Style.GrabRounding = 6;
 Style.TabRounding = 3;
+
+return Colours, Style
